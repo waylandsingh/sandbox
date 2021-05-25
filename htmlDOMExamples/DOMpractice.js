@@ -38,3 +38,23 @@ inADivToo.textContent = 'ME TOO'
 blackBorderDiv.appendChild(inADivToo)
 //     Hint for this one: after creating the div with createElement, append the <h1> and <p> to it before adding it to the container.
 container.appendChild(blackBorderDiv);
+
+// select the button
+const button = document.querySelector("#btn");
+
+button.addEventListener('click', e => {
+    alert(e.target);
+    e.target.style.backgroundColor='blue'
+});
+
+// selecting and adding a listener to all buttons SAME listener though
+const allButtons = document.querySelectorAll("button")
+
+// pass a function to execute for each button in the NOT array
+allButtons.forEach( button => {
+    // add the event listener...
+    button.addEventListener('click', () => {
+        //... which takes a function to execute on 'click'
+        alert(button.id)
+    });
+});
