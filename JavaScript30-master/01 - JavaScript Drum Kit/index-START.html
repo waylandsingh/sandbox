@@ -58,6 +58,57 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  // this time, in the html file body so it loads AFTER the rest of elements
+  // My approach
+  // goal is to add a class to the button when it is clicked 
+  // addEventListener instructs a JS reference to check for an event and execute a function
+
+  // get an array of all buttons (querySelectAll)
+
+  // add an event listener to each (.foreach)
+
+  // that adds the 'playing' class to the button (for css)
+
+  // some function that selects and plays the corresponding <audio> tag 
+    // matching the data-key attribute is my guess?
+    // get the data-key of the button pressed
+    // find the audio element with that data key and play it
+
+
+    // tutorial approach, with an arrow function
+    // add an eventListener to the window and find the key# of the key pressed
+    window.addEventListener('keydown', e => {
+      console.log(e.keyCode)
+      // with that key number, add 'playing' to the classes
+      // attribute selector (has object syntax)
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+      if (!audio) return; // no coresponding audio element
+      audio.currentTime=0;
+      audio.play();
+
+      // highlight the key by adding the playing attribute
+      const key = document.querySelector(`div[data-key="${e.keyCode}"]`)
+      key.classList.add('playing')
+
+      // un-highlight
+      // but more complicated with a transition detection 
+      // transition is an event unto itself
+
+    });
+
+    // USE THE CSS transitions as cues for WHEN to revert the class (automatically syncs with animation!)
+    // function to remove the 'playing' class after a key has ended transition
+    function removeTransition(e) {
+      if (e.propertyName !=='transform') return;
+
+      console.log(e.propertyName)
+      console.log(e)
+      // `this` is the calling element, here, the KEY that finished transitioning
+      this.classList.remove('playing')
+    }
+
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition))
 
 </script>
 

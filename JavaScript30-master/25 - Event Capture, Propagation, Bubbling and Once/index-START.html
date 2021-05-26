@@ -42,6 +42,21 @@
 
 <button></button>
 <script>
+  const divs = document.querySelectorAll('div');
+
+  // log the class of the object triggering an event
+  function logText(e) {
+    console.log(this.classList.value)
+    // e.stopPropagation();
+  }
+
+  divs.forEach( div => {
+    div.addEventListener('click', logText, {
+      capture:false,
+      once: true
+    })
+    
+  });
 
 </script>
 </body>
