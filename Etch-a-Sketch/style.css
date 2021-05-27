@@ -1,0 +1,45 @@
+/* styling for etch a sketch */
+
+#container {
+    max-width: calc(18px*16)
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#grid-wrapper {
+    height: 75vh;
+    width: 75vh;
+    min-width: 400px;
+    min-height:400px;
+    
+}
+
+/* the grid placement */
+#grid {
+    border: black 1px dotted;
+    display:grid;
+    grid-template-columns: repeat(16,1fr);
+    grid-template-rows: repeat(16,1fr);
+    grid-gap:0px;
+}
+
+
+/* unshaded squares */
+.gridsq {
+    background-color:cadetblue;
+    border: cyan 1px solid;
+    height: 16px;
+    width: 16px;
+    transition:0.65s;
+}
+
+
+/* shaded squares */
+.coloredsq {
+    background-color: transparent;
+}
