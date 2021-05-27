@@ -1,7 +1,8 @@
 /* styling for etch a sketch */
 
 #container {
-    max-width: calc(18px*16)
+    /* max-width: calc(18px*16);
+    max-height: calc(18px*16) */
 }
 body {
     display: flex;
@@ -16,12 +17,14 @@ body {
     width: 75vh;
     min-width: 400px;
     min-height:400px;
+
     
 }
 
 /* the grid placement */
 #grid {
-    border: black 1px dotted;
+    /* border: black 1px dotted; */
+
     display:grid;
     grid-template-columns: repeat(16,1fr);
     grid-template-rows: repeat(16,1fr);
@@ -32,9 +35,9 @@ body {
 /* unshaded squares */
 .gridsq {
     background-color:cadetblue;
-    border: cyan 1px solid;
-    height: 16px;
-    width: 16px;
+    /* border: cyan 1px solid; */
+    /* height: 16px;
+    width: 16px; */
     transition:0.65s;
 }
 
