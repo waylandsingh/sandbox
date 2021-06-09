@@ -7,7 +7,7 @@ const container = document.querySelector('#container')
 const sideLength = container.clientHeight
 
 
-function drawSquare(n=16) {
+function drawSquare(n = 16) {
     grid.innerHTML = ''
     grid.style.gridTemplateColumns = `repeat(${n},1fr)`;
     grid.style.gridTemplateRows = `repeat(${n},1fr)`;
@@ -29,7 +29,7 @@ function drawSquare(n=16) {
         });
     }
 
-    
+    console.log('something heres')
 }
 
 // function to calculate 'gridsize'
@@ -48,3 +48,4 @@ function resize() {
 
 // how to get the size of the container, and modify the css of resulting pixels?
 drawSquare(16)
+console.log('javascript loaded')
