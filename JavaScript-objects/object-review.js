@@ -31,3 +31,17 @@ function Player2(name, marker) {
 
 const player4 = new Player2('xena', 'z')
 player4.sayMyName()
+
+// EXERCISE: Write constructor for "Book" objects
+// include: title, author, pages$, and read/notread
+// include: .info() method to return book information as a string
+function Book(title, author, pages, readStatus) {
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.readStatus = readStatus
+    this.info = () => `${this.title} by ${this.author}, ${this.pages} pages - ${this.readStatus}`
+}
+
+const curiousGeorge = new Book('Curious George', 'Margret and H. A. Rey', 50, 'not read yet')
+console.log(curiousGeorge.info())
